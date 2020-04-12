@@ -1,3 +1,5 @@
+const sass = require('node-sass');
+
 /* global module:false */
 module.exports = function(grunt) {
 	var port = grunt.option('port') || 8000;
@@ -20,6 +22,9 @@ module.exports = function(grunt) {
 		},
 
 		sass: {
+			options: {
+				implementation: sass
+			},
 			main: {
 				files: {
 					'device-loop/style.css': 'device-loop/style.scss',
@@ -27,7 +32,8 @@ module.exports = function(grunt) {
 					'cloudy-spiral/style.css': 'cloudy-spiral/style.scss',
 					'checkwave/style.css': 'checkwave/style.scss',
 					'monocle/style.css': 'monocle/style.scss',
-					'flipside/style.css': 'flipside/style.scss'
+					'flipside/style.css': 'flipside/style.scss',
+					'progress-nav/style.css': 'progress-nav/style.scss'
 				}
 			}
 		},
@@ -36,7 +42,8 @@ module.exports = function(grunt) {
 			dist: {
 				files: [
 					{ src: 'flexing-pagination/style.css' },
-					{ src: 'flipside/style.css' }
+					{ src: 'flipside/style.css' },
+					{ src: 'progress-nav/style.css' }
 				]
 			}
 		},
